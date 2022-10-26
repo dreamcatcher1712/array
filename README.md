@@ -1,6 +1,44 @@
 # array
-An array is a variable that can store multiple values.
-Arrays have 0 as the first index.
-To create an array, define the data type and specify the name of the array followed by square brackets [].
-To insert values to it, use a comma-separated list, inside curly braces:
-      int myNumbers[] = {25, 50, 75, 100};
+INSERTION:
+// Function to insert an element in an unsorted array.
+// arr[] = array, elements = number of elements present in the array
+// keyToBeInserted = element to be inserted in the array
+// size of the array
+int insertElement(int arr[], int elements, int keyToBeInserted, int size) 
+{ 
+// Check if the capacity of the array is already full 
+if (elements >= size) 
+return elements; 
+//If not then the element is inserted at the last index 
+//and the new array size is returned
+arr[elements] = keyToBeInserted; 
+return (elements + 1); 
+}
+
+TIME COMPLEXITY: O(1)
+SPACE COMPLEXITY: O(1)
+
+DELETION:
+// Function to delete an element
+// where arr[] is the array from which element needs to be deleted
+// size is the size of the array
+// keyToBeDeleted is the element to be deleted from the array
+int deleteElement(int arr[], int size, int keyToBeDeleted) 
+{ 
+// Calling findElement function to get the position of the element which needs to be deleted
+int pos = findElement(array, size, keyToBeDeleted); 
+// If element is not found then it prints Element not found
+if (pos == - 1) 
+{ 
+printf("Element not found"); 
+return size; 
+} 
+// Otherwise it deletes the element & moves rest of the element by one position
+int i; 
+for (i = pos; i < size - 1; i++) 
+arr[i] = arr[i + 1]; 
+return size - 1; 
+} 
+
+TIME COMPLEXITY: O(N)
+SPACE COMPLEXITY: O(1)
